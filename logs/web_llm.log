@@ -1,0 +1,130 @@
+2024-11-25 17:50:41,478 - ERROR - Error initializing system: OpenAI API key not found. Set OPENAI_API_KEY environment variable.
+Traceback (most recent call last):
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/Web-LLM.py", line 157, in initialize_system
+    llm_wrapper = LLMWrapper()
+                  ^^^^^^^^^^^^
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/llm_wrapper.py", line 20, in __init__
+    self._initialize_openai()
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/llm_wrapper.py", line 38, in _initialize_openai
+    raise ValueError("OpenAI API key not found. Set OPENAI_API_KEY environment variable.")
+ValueError: OpenAI API key not found. Set OPENAI_API_KEY environment variable.
+2024-11-25 17:51:15,920 - ERROR - Error initializing system: OpenAI API key not found. Set OPENAI_API_KEY environment variable.
+Traceback (most recent call last):
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/Web-LLM.py", line 157, in initialize_system
+    llm_wrapper = LLMWrapper()
+                  ^^^^^^^^^^^^
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/llm_wrapper.py", line 20, in __init__
+    self._initialize_openai()
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/llm_wrapper.py", line 38, in _initialize_openai
+    raise ValueError("OpenAI API key not found. Set OPENAI_API_KEY environment variable.")
+ValueError: OpenAI API key not found. Set OPENAI_API_KEY environment variable.
+2024-11-25 17:57:41,813 - ERROR - Error initializing system: LLM test failed: OpenAI API request failed: Error code: 404 - {'error': {'message': 'The model `gpt-4o` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+Traceback (most recent call last):
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/llm_wrapper.py", line 100, in _openai_generate
+    response = self.client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/venv/lib/python3.11/site-packages/openai/_utils/_utils.py", line 275, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/venv/lib/python3.11/site-packages/openai/resources/chat/completions.py", line 829, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1278, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/venv/lib/python3.11/site-packages/openai/_base_client.py", line 955, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1059, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `gpt-4o` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/Web-LLM.py", line 159, in initialize_system
+    test_response = llm_wrapper.generate("Test", max_tokens=10)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/llm_wrapper.py", line 73, in generate
+    return self._openai_generate(prompt, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/llm_wrapper.py", line 112, in _openai_generate
+    raise Exception(f"OpenAI API request failed: {str(e)}")
+Exception: OpenAI API request failed: Error code: 404 - {'error': {'message': 'The model `gpt-4o` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/Web-LLM.py", line 163, in initialize_system
+    raise ConnectionError(f"LLM test failed: {str(e)}")
+ConnectionError: LLM test failed: OpenAI API request failed: Error code: 404 - {'error': {'message': 'The model `gpt-4o` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2024-11-25 18:05:59,376 - ERROR - Error initializing system: LLM test failed: OpenAI API request failed: Error code: 404 - {'error': {'message': 'The model `gpt-4o` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+Traceback (most recent call last):
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/llm_wrapper.py", line 100, in _openai_generate
+    response = self.client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/venv/lib/python3.11/site-packages/openai/_utils/_utils.py", line 275, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/venv/lib/python3.11/site-packages/openai/resources/chat/completions.py", line 829, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1278, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/venv/lib/python3.11/site-packages/openai/_base_client.py", line 955, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1059, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `gpt-4o` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/Web-LLM.py", line 159, in initialize_system
+    test_response = llm_wrapper.generate("Test", max_tokens=10)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/llm_wrapper.py", line 73, in generate
+    return self._openai_generate(prompt, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/llm_wrapper.py", line 112, in _openai_generate
+    raise Exception(f"OpenAI API request failed: {str(e)}")
+Exception: OpenAI API request failed: Error code: 404 - {'error': {'message': 'The model `gpt-4o` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/Web-LLM.py", line 163, in initialize_system
+    raise ConnectionError(f"LLM test failed: {str(e)}")
+ConnectionError: LLM test failed: OpenAI API request failed: Error code: 404 - {'error': {'message': 'The model `gpt-4o` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2024-11-25 18:41:27,981 - ERROR - Error initializing system: OpenAI API key not found. Set OPENAI_API_KEY environment variable.
+Traceback (most recent call last):
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/Web-LLm.py", line 157, in initialize_system
+    llm_wrapper = LLMWrapper()
+                  ^^^^^^^^^^^^
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/llm_wrapper.py", line 20, in __init__
+    self._initialize_openai()
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/llm_wrapper.py", line 38, in _initialize_openai
+    raise ValueError("OpenAI API key not found. Set OPENAI_API_KEY environment variable.")
+ValueError: OpenAI API key not found. Set OPENAI_API_KEY environment variable.
+2024-11-25 18:42:35,769 - ERROR - Error initializing system: OpenAI API key not found. Set OPENAI_API_KEY environment variable.
+Traceback (most recent call last):
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/Web-LLm.py", line 157, in initialize_system
+    llm_wrapper = LLMWrapper()
+                  ^^^^^^^^^^^^
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/llm_wrapper.py", line 20, in __init__
+    self._initialize_openai()
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/llm_wrapper.py", line 38, in _initialize_openai
+    raise ValueError("OpenAI API key not found. Set OPENAI_API_KEY environment variable.")
+ValueError: OpenAI API key not found. Set OPENAI_API_KEY environment variable.
+2024-11-25 18:43:35,859 - ERROR - Error initializing system: OpenAI API key not found. Set OPENAI_API_KEY environment variable.
+Traceback (most recent call last):
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/Web-LLm.py", line 157, in initialize_system
+    llm_wrapper = LLMWrapper()
+                  ^^^^^^^^^^^^
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/llm_wrapper.py", line 20, in __init__
+    self._initialize_openai()
+  File "/Users/rakeeshsanikommu/Downloads/Automated-AI-Web-Researcher-Ollama-main/llm_wrapper.py", line 38, in _initialize_openai
+    raise ValueError("OpenAI API key not found. Set OPENAI_API_KEY environment variable.")
+ValueError: OpenAI API key not found. Set OPENAI_API_KEY environment variable.
